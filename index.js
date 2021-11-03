@@ -12,5 +12,16 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  const newmap = tutorials.map(changer);
+  console.log(newmap);
+  return newmap
 }
+function changer(str){
+  let newstr = str.charAt(0).toUpperCase() + str.slice(1);
+  for(let i = 0; i < str.length; i++){
+    if(str.charAt(i) === " "){
+      newstr = newstr.slice(0, i + 1) + newstr.charAt(i + 1).toUpperCase() + newstr.slice(i + 2)
+    }
+  }
+  return newstr;
+};
